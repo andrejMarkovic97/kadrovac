@@ -13,11 +13,13 @@ public class FileConfiguration : IEntityTypeConfiguration<File>
         builder.HasKey(f => f.Id);
         builder.Property(f => f.Id).HasColumnName("file_id").IsRequired();
         builder.Property(f => f.Path).HasColumnName("path").IsRequired().HasMaxLength(255);
-        builder.Property(f => f.Description).HasColumnName("description").IsRequired().HasMaxLength(255);
+        builder.Property(f => f.Description).HasColumnName("description").HasMaxLength(255);
         builder.Property(f => f.FileType).HasColumnName("file_type").IsRequired();
-        builder.Property(f => f.EmployeeId).HasColumnName("employee_id").IsRequired();
         builder.Property(f => f.DateUploaded).HasColumnName("date_uploaded").IsRequired();
-
+        builder.Property(f => f.EmployeeId).HasColumnName("employee_id").IsRequired();
+        builder.Property(f => f.AbsenceId).HasColumnName("absence_id");
+        builder.Property(f => f.PaymentId).HasColumnName("payment_id");
+        
         builder.HasOne(f => f.Employee)
             .WithMany(e => e.Files)
             .HasForeignKey(f => f.EmployeeId)

@@ -27,6 +27,8 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
         entity.Property(e => e.IsManager).HasColumnName("is_manager").IsRequired();
         entity.Property(e => e.LocationId).HasColumnName("location_id").IsRequired();
         entity.Property(e => e.TeamId).HasColumnName("team_id").IsRequired();
+        entity.Property(e => e.RoleId).HasColumnName("role_id").IsRequired();
+        entity.Property(e => e.CompanyId).HasColumnName("company_id").IsRequired();
 
         entity.HasOne(e => e.Location)
             .WithMany(l => l.Employees)
