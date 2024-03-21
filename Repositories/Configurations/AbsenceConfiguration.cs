@@ -1,6 +1,7 @@
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using File = Domain.Entities.File;
 
 namespace Repositories.Configurations;
 
@@ -25,8 +26,8 @@ public class AbsenceConfiguration : IEntityTypeConfiguration<Absence>
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(a => a.File)
-            .WithMany(f => f.Absences)
-            .HasForeignKey(a => a.FileId)
+            .WithOne(f => f.Absence)
+            .HasForeignKey<File>(f => f.AbsenceId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

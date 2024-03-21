@@ -10,8 +10,10 @@ public class File(
     FileType fileType,
     Guid employeeId,
     Employee employee,
-    List<Absence> absences,
-    List<Payment> payments)
+    Guid absenceId,
+    Absence absence,
+    Guid paymentId,
+    Payment payment)
 {
     public Guid Id { get; set; } = id;
     public string Path { get; set; } = path;
@@ -21,6 +23,10 @@ public class File(
     public Guid EmployeeId { get; set; } = employeeId;
     public Employee Employee { get; set; } = employee;
 
-    public List<Absence> Absences { get; set; } = absences;
-    public List<Payment> Payments { get; set; } = payments;
+    public Guid AbsenceId { get; set; } = absenceId;
+    public Absence Absence { get; set; } = absence;
+
+    public Guid PaymentId { get; set; } = paymentId;
+
+    public Payment Payment { get; set; } = payment;
 }

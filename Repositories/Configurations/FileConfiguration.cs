@@ -1,3 +1,4 @@
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using File = Domain.Entities.File;
@@ -22,14 +23,14 @@ public class FileConfiguration : IEntityTypeConfiguration<File>
             .HasForeignKey(f => f.EmployeeId)
             .OnDelete(DeleteBehavior.Restrict);
         
-        builder.HasMany(f => f.Absences)
+        builder.HasOne(f => f.Absence)
             .WithOne(a => a.File)
-            .HasForeignKey(a => a.FileId)
+            .HasForeignKey<File>(f => f.AbsenceId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasMany(f => f.Payments)
+        builder.HasOne(f => f.Payment)
             .WithOne(p => p.File)
-            .HasForeignKey(p => p.FileId)
+            .HasForeignKey<Payment>(p => p.FileId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

@@ -5,30 +5,21 @@ using File = Domain.Entities.File;
 
 namespace Repositories.DbContext;
 
-public class AppDbContext(
-    DbContextOptions<AppDbContext> options,
-    DbSet<Employee> employees,
-    DbSet<Absence> absences,
-    DbSet<File> files,
-    DbSet<Location> locations,
-    DbSet<Payment> payments,
-    DbSet<Role> roles,
-    DbSet<Team> teams,
-    DbSet<Company> companies,
-    DbSet<City> cities,
-    DbSet<Country> countries)
-    : Microsoft.EntityFrameworkCore.DbContext(options)
+public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public DbSet<Employee> Employees { get; set; } = employees;
-    public DbSet<Absence> Absences { get; set; } = absences;
-    public DbSet<File> Files { get; set; } = files;
-    public DbSet<Location> Locations { get; set; } = locations;
-    public DbSet<Payment> Payments { get; set; } = payments;
-    public DbSet<Role> Roles { get; set; } = roles;
-    public DbSet<Team> Teams { get; set; } = teams;
-    public DbSet<Company> Companies { get; set; } = companies;
-    public DbSet<City> Cities { get; set; } = cities;
-    public DbSet<Country> Countries { get; set; } = countries;
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+    }
+    public DbSet<Employee> Employees { get; set; } 
+    public DbSet<Absence> Absences { get; set; } 
+    public DbSet<File> Files { get; set; } 
+    public DbSet<Location> Locations { get; set; } 
+    public DbSet<Payment> Payments { get; set; } 
+    public DbSet<Role> Roles { get; set; } 
+    public DbSet<Team> Teams { get; set; } 
+    public DbSet<Company> Companies { get; set; } 
+    public DbSet<City> Cities { get; set; } 
+    public DbSet<Country> Countries { get; set; } 
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
