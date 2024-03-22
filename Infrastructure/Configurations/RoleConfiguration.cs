@@ -2,7 +2,7 @@ using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Repositories.Configurations;
+namespace Infrastructure.Configurations;
 
 public class RoleConfiguration : IEntityTypeConfiguration<Role>
 {

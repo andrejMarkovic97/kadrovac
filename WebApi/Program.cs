@@ -1,5 +1,5 @@
+using Infrastructure.DbContext;
 using Microsoft.EntityFrameworkCore;
-using Repositories.DbContext;
 using WebApi.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);

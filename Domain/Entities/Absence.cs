@@ -23,6 +23,7 @@ public class Absence(
     public Guid EmployeeId { get; set; } = employeeId;
     public Employee Employee { get; set; } = employee;
     public Guid? ApprovedById { get; set; } = approvedById;
+    
     public Employee ApprovedBy { get; set; } = approvedBy;
     public Guid? FileId { get; set; } = fileId;
     public File? File { get; set; } 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using File = Domain.Entities.File;
 
-namespace Repositories.Configurations;
+namespace Infrastructure.Configurations;
 
 public class AbsenceConfiguration : IEntityTypeConfiguration<Absence>
 {

@@ -1,9 +1,9 @@
 using Domain.Entities;
+using Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
-using Repositories.Configurations;
 using File = Domain.Entities.File;
 
-namespace Repositories.DbContext;
+namespace Infrastructure.DbContext;
 
 public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
